@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-#run: wget https://raw.githubusercontent.com/aeropedia/script/master/xenserver/tools -O - | sh –
+#run: wget https://raw.githubusercontent.com/aeropedia/script/master/xenserver/tools -O - | bash –
 
 sudo mount /dev/xvdd /mnt
 sudo /mnt/Linux/install.sh
