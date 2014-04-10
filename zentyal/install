@@ -4,14 +4,21 @@
 
 #check if it's root
 if [ $EUID -ne 0 ]; then
-    echo "This script should be run as root." > /dev/stderr
+    echo "Skrip ini harus dijalankan oleh root." > /dev/stderr
     exit 1
 fi
 
 sudo apt-get update
 sudo apt-get -y upgrade
-sudo echo "deb http://archive.zentyal.org/zentyal 3.4 main extra" >> /etc/apt/sources.list
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 10E239FF
-wget -q http://keys.zentyal.org/zentyal-3.4-archive.asc -O- | sudo apt-key add -
+
+if [[ `lsb_release -rs` == "12.04" ]]; then
+    sudo echo "deb http://archive.zentyal.org/zentyal 3.3 main extra" >> /etc/apt/sources.list
+    
+    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 10E239FF
+    wget -q http://keys.zentyal.org/zentyal-3.3-archive.asc -O- | sudo apt-key add -
+else
+    echo "Versi ubuntu yang digunakan tidak cocok." > /dev/stderr
+fi
+
 sudo apt-get update
 sudo apt-get -y install zentyal
