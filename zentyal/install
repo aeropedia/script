@@ -3,7 +3,7 @@
 #run: wget https://raw.githubusercontent.com/aeropedia/script/master/zentyal/install -O - | sh –
 
 #check if it's root
-if [[ $UID -ne 0 ]]; then
+if [ $UID -ne 0 ]; then
    echo "This script must be run as root"
    exit 1
 fi
