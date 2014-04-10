@@ -1,3 +1,5 @@
+#!/bin/sh
+
 sudo apt-get update
 sudo apt-get upgrade
 sudo echo "deb http://archive.zentyal.org/zentyal 3.4 main extra" >> /etc/apt/sources.list
