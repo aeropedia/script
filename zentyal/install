@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #run: wget https://raw.githubusercontent.com/aeropedia/script/master/zentyal/install -O - | sh –
 
