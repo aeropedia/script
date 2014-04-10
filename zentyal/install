@@ -2,7 +2,7 @@
 
 #run: wget https://raw.githubusercontent.com/aeropedia/script/master/zentyal/install -O - | bash –
 
-#check if it's root
+#Cek apakah dijalankan oleh root
 if [ $EUID -ne 0 ]; then
     echo "Skrip ini harus dijalankan oleh root." > /dev/stderr
     exit 1
