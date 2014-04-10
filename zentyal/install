@@ -18,6 +18,7 @@ if [[ `lsb_release -rs` == "12.04" ]]; then
     wget -q http://keys.zentyal.org/zentyal-3.3-archive.asc -O- | sudo apt-key add -
 else
     echo "Versi ubuntu yang digunakan tidak cocok." > /dev/stderr
+    exit 1
 fi
 
 sudo apt-get update
