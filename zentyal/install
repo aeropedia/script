@@ -2,6 +2,9 @@
 
 #run: wget https://raw.githubusercontent.com/aeropedia/script/master/zentyal/install -O - | sh –
 
+#check if it's root
+wget https://raw.githubusercontent.com/aeropedia/script/master/misc/rootcheck -O - | sh –
+
 sudo apt-get update
 sudo apt-get -y upgrade
 sudo echo "deb http://archive.zentyal.org/zentyal 3.4 main extra" >> /etc/apt/sources.list
