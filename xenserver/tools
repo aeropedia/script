@@ -1,5 +1,7 @@
 #!/bin/sh
 
+#run: wget https://raw.githubusercontent.com/aeropedia/script/master/xenserver/tools -O - | sh –
+
 sudo mount /dev/xvdd /mnt
 sudo /mnt/Linux/install.sh
 sudo reboot
