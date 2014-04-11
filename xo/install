@@ -9,7 +9,7 @@ sudo gem install compass
 git clone http://github.com/vatesfr/xo-server
 cd ./xo-server
 npm install
-wget https://raw.githubusercontent.com/aeropedia/script/master/xo/files/config/local.yaml -O config/local.yaml
+wget https://raw.githubusercontent.com/aeropedia/script/master/xo/files/xo-server/config/local.yaml -O config/local.yaml
 
 cd ..
 git clone http://github.com/vatesfr/xo-web
@@ -19,4 +19,4 @@ npm install
 
 #start!
 cd ..
-./xo-server/xo-server
+sudo ./xo-server/xo-server
