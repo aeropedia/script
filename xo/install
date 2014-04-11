@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#run: wget https://raw.githubusercontent.com/aeropedia/script/master/xo/install -O - | bash –
+
+sudo apt-get update
+sudo apt-get -y install build-essential redis-server libpng-dev ruby1.9.1 git
+sudo gem install compass
+
+git clone http://github.com/vatesfr/xo-server
+git clone http://github.com/vatesfr/xo-web
+
+cd ./xo-server
+npm install
+wget https://raw.githubusercontent.com/aeropedia/script/master/xo/files/local.yaml -O config/local.yaml
+
+cd ../xo-web
+npm install
+./gulp --production
+
+#start!
+cd ..
+./xo-server/xo-server
