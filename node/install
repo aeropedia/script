@@ -2,15 +2,18 @@
 
 #run: wget https://raw.githubusercontent.com/aeropedia/script/master/node/install -O - | bash –
 
+#sudo apt-get update
+#sudo apt-get -y upgrade
+#sudo apt-get -y install build-essential
+#sudo apt-get -y install curl openssl libssl-dev git
+#git clone https://github.com/joyent/node.git
+#cd node
+#git checkout v0.11.12
+#./configure
+#make
+#sudo make install
+
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:chris-lea/node.js
 sudo apt-get update
-sudo apt-get -y upgrade
-
-sudo apt-get -y install build-essential
-sudo apt-get -y install curl openssl libssl-dev git
-
-git clone https://github.com/joyent/node.git
-cd node
-git checkout v0.11.12
-./configure
-make
-sudo make install
+sudo apt-get -y install nodejs
