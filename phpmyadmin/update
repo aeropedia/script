@@ -2,5 +2,7 @@
 
 #run: wget https://raw.githubusercontent.com/aeropedia/script/master/phpmyadmin/update -O - | bash
 
+# based on http://forum.likg.org.ua/server-side-actions/install-and-keep-updated-phpmyadmin-with-git-t508.html
+
 cd /var/www/phpmyadmin
 sudo -u www-data -H git pull
