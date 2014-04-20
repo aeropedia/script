@@ -3,5 +3,4 @@
 #run: wget https://raw.githubusercontent.com/aeropedia/script/master/chamilo/install -O - | bash
 
 cd /var/www/
-sudo -u www-data -H mkdir chamilo
-sudo -u www-data -H git clone --depth=1 -b '1.9.x' https://github.com/chamilo/chamilo-lms.git chamilo
+sudo -u www-data -H git clone --depth=1 -b '1.9.x' https://github.com/chamilo/chamilo-lms.git
