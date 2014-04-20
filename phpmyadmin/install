@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#run: wget https://raw.githubusercontent.com/aeropedia/script/master/phpmyadmin/install -O - | bash
+
+cd /var/www/
+sudo -u www-data -H git clone --single-branch --depth=1 -b STABLE https://github.com/phpmyadmin/phpmyadmin.git
