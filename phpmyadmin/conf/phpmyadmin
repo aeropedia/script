@@ -1,0 +1,17 @@
+<VirtualHost *:80>
+    ServerAdmin dimas@batujajar.net
+
+    DocumentRoot /var/www/pypmyadmin
+
+    <Directory />
+            Options FollowSymLinks
+            AllowOverride None
+    </Directory>
+
+    <Directory /var/www/phpmyadmin>
+            Options Indexes FollowSymLinks MultiViews
+            AllowOverride None
+            Order allow,deny
+            allow from all
+    </Directory>
+</VirtualHost>
