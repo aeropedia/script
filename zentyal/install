@@ -1,15 +1,12 @@
 #!/bin/bash
 
-#run: wget https://raw.githubusercontent.com/aeropedia/script/master/zentyal/install -O - | bash –
+#run: wget https://raw.githubusercontent.com/aeropedia/script/master/zentyal/install -O - | bash
 
 #Cek apakah dijalankan oleh root
 if [ $EUID -ne 0 ]; then
     echo "Skrip ini harus dijalankan oleh root." > /dev/stderr
     exit 1
 fi
-
-sudo apt-get update
-sudo apt-get -y upgrade
 
 if [[ `lsb_release -rs` == "12.04" ]]; then
     sudo echo "deb http://archive.zentyal.org/zentyal 3.3 main extra" >> /etc/apt/sources.list
@@ -28,4 +25,5 @@ else
 fi
 
 sudo apt-get update
+sudo apt-get -y upgrade
 sudo apt-get -y install zentyal
