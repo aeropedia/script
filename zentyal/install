@@ -9,16 +9,23 @@ if [ $EUID -ne 0 ]; then
 fi
 
 if [[ `lsb_release -rs` == "12.04" ]]; then
-    sudo echo "deb http://archive.zentyal.org/zentyal 3.3 main extra" >> /etc/apt/sources.list
+    sudo echo "deb http://archive.zentyal.org/zentyal 3.3 main extra" > /etc/apt/sources.list.d/zentyal.list
     
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 10E239FF
     wget -q http://keys.zentyal.org/zentyal-3.3-archive.asc -O- | sudo apt-key add -
     
 elif [[ `lsb_release -rs` == "13.10" ]]; then
-    sudo echo "deb http://archive.zentyal.org/zentyal 3.4 main extra" >> /etc/apt/sources.list
+    sudo echo "deb http://archive.zentyal.org/zentyal 3.4 main extra" > /etc/apt/sources.list.d/zentyal.list
     
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 10E239FF
     wget -q http://keys.zentyal.org/zentyal-3.4-archive.asc -O- | sudo apt-key add -
+    
+elif [[ `lsb_release -rs` == "14.04" ]]; then
+    sudo echo "deb http://archive.zentyal.org/zentyal 3.5 main extra" > /etc/apt/sources.list.d/zentyal.list
+    
+    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 10E239FF
+    wget -q http://keys.zentyal.org/zentyal-3.5-archive.asc -O- | sudo apt-key add -
+    
 else
     echo "Versi ubuntu yang digunakan tidak cocok." > /dev/stderr
     exit 1
